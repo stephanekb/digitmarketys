@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -10,8 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/assets/js')
-    .sass("resources/scss/main.scss", "public/css")
-    .sass("resources/scss/responsive.scss", "public/css").options({
-        processCssUrls: false
-    }).sourceMaps();
+mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css', [
+        //
+    ]);
